@@ -1,0 +1,15 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    pre-build:
+      - echo "Pre-build step"
+    build:
+      - pip install --no-cache-dir -r requirements.txt
+    post-build:
+      - echo "Post-build step"
+run:
+  runtime-version: 3.8
+  command: python app.py
+  network:
+    port: 8080
